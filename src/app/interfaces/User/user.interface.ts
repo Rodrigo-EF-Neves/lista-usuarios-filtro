@@ -10,6 +10,6 @@ export interface IUser {
   telefone: string
   ativo: boolean
   funcao: string
-  dataCriacao: string
+  data_cadastro: string
   status: IStatus
 }

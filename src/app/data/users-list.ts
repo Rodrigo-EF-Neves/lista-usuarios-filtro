@@ -16,7 +16,7 @@ export const UsersList: IUser[] = [
         telefone: "11912345678",
         ativo: true,
         funcao: "Desenvolvedor",
-        dataCriacao: "2023-01-15T10:00:00.000Z",
+        data_cadastro: "2023-01-15T10:00:00.000Z",
         status: {
             online: true,
             verificado: true,
@@ -39,7 +39,7 @@ export const UsersList: IUser[] = [
         telefone: "21987654321",
         ativo: true,
         funcao: "Designer",
-        dataCriacao: "2023-02-10T09:30:00.000Z",
+        data_cadastro: "2023-02-10T09:30:00.000Z",
         status: {
             online: false,
             verificado: true,
@@ -62,7 +62,7 @@ export const UsersList: IUser[] = [
         telefone: "31912349876",
         ativo: false,
         funcao: "Gerente",
-        dataCriacao: "2022-11-20T15:45:00.000Z",
+        data_cadastro: "2022-11-20T15:45:00.000Z",
         status: {
             online: false,
             verificado: false,
@@ -85,7 +85,7 @@ export const UsersList: IUser[] = [
         telefone: "41987654321",
         ativo: true,
         funcao: "Analista",
-        dataCriacao: "2023-05-05T13:15:00.000Z",
+        data_cadastro: "2023-05-05T13:15:00.000Z",
         status: {
             online: true,
             verificado: true,
@@ -108,7 +108,7 @@ export const UsersList: IUser[] = [
         telefone: "51912345678",
         ativo: false,
         funcao: "Administrador",
-        dataCriacao: "2022-08-30T08:00:00.000Z",
+        data_cadastro: "2022-08-30T08:00:00.000Z",
         status: {
             online: false,
             verificado: true,
