@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { IFilterOptions } from '../../interfaces/filter-options.interface';
 
 interface Food {
@@ -22,9 +22,11 @@ export class FilterComponent {
   statusList = [
     { description: 'Ativo', value: true },
     { description: 'Inativo', value: false }
-  ]
+  ];
+
+  @Output('onFilter') onFilterEmitt = new EventEmitter<IFilterOptions>();
 
   onFilter() {
-    console.log(this.filterOptions)
+    this.onFilterEmitt.emit(this.filterOptions);
   }
 }
