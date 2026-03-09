@@ -3,6 +3,7 @@ import { IUser } from './interfaces/User/user.interface';
 import { UsersList } from './data/users-list';
 import { IFilterOptions } from './interfaces/filter-options.interface';
 import { filter } from 'rxjs';
+import { IStatus } from './interfaces/User/status.interface';
 
 @Component({
   selector: 'app-root',
@@ -32,7 +33,7 @@ export class AppComponent implements OnInit {
 
   onFilter(filterOptions: IFilterOptions): void {
     console.log(filterOptions)
-    
+
     this.usersListFiltered = this.filterUsersList(filterOptions, this.usersList);
   }
 
@@ -40,16 +41,28 @@ export class AppComponent implements OnInit {
     let filteredList = [];
 
     filteredList = this.filterUsersListByName(filterOptions.name, usersList);
+    filteredList = this.filterUsersListByStatus(filterOptions.status, filteredList);
 
     return filteredList;
   }
 
   filterUsersListByName(name: string | undefined, usersList: IUser[]): IUser[] {
     const NAME_NOT_TYPED = name === undefined;
+    
     if (NAME_NOT_TYPED)
       return usersList;
 
     const FILTERED_LIST = usersList.filter((user) => user.nome.toLowerCase().includes(name.toLowerCase()));
+    return FILTERED_LIST;
+  }
+
+  filterUsersListByStatus(status: boolean | undefined, usersList: IUser[]): IUser[] {
+    const STATUS_NOT_SELECTED = status === undefined;
+    
+    if (STATUS_NOT_SELECTED)
+      return usersList;
+
+    const FILTERED_LIST = usersList.filter((user) => user.ativo === status);
     return FILTERED_LIST;
   }
 }
